@@ -45,8 +45,10 @@ public class Main extends Application {
         graphView.setLayoutX(100);
         graphView.setLayoutY(100);
         AtomicInteger counter = new AtomicInteger();
+        int numberOfImages = imageQueue.size();
         window.imageSlider().setOnAction(actionEvent -> {
-            if (counter.get() < imageQueue.size()) {
+            System.out.println("Size: " + imageQueue.size());
+            if (counter.get() < numberOfImages - 1) {
                 Image currentImage = imageQueue.dequeue();
                 KNNGraph newGraph = new KNNGraph(currentImage, 10);
                 Queue<Pair<Double, String>> newResults = model.test(newGraph.getKnnGraph());
@@ -55,6 +57,8 @@ public class Main extends Application {
                     window.updateImage(currentImage, newResults);
                     graphView.update(newGraph.getKnnGraph());
                 });
+
+                System.out.println("Counter: " + counter.get());
             }
             else{
                 Platform.runLater(() -> {
