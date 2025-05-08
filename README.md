@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/382058a2-492a-4b62-a36e-ba54849f179f)
+
 ## Background
 
 Froth flotation is the most widely employed mineral separation technique, exploiting the differences in the physicochemical properties of mineral surfaces. In this process, hydrophobic mineral particles selectively attach to gas bubbles, rising to form a froth layer, while hydrophilic particles remain in the slurry. The characteristics of the froth layer — including bubble size, stability, and texture — are critical indicators of flotation performance and process conditions.
