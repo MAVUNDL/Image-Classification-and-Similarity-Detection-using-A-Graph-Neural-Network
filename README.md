@@ -26,11 +26,10 @@ Beyond structural features, **color** and **texture** information are also extra
     
 - **Texture Features**: Using **Gray-Level Co-occurrence Matrix (GLCM)**, we compute:
     
-    - **Contrast**: Quantifies local intensity variations, indicating heterogeneity in bubble sizes.
-        
-    - **Energy**: Measures textural uniformity, related to bubble arrangement and stability.
-        
-    - **Entropy**: Reflects the complexity or randomness of the texture.
+  - **Contrast**: Quantifies local intensity variations, indicating heterogeneity in bubble sizes.
+  - **Energy**: Measures textural uniformity, related to bubble arrangement and stability.
+  - **Entropy**: Reflects the complexity or randomness of the texture.
+  - **Homogeneity**: Measures the closeness of the distribution of elements to the GLCM diagonal, indicating the smoothness and uniformity of the bubble structures.
         
 
 Each image is divided into smaller non-overlapping **patches**, and an 8-dimensional feature vector is extracted for each patch, capturing its local visual properties.
