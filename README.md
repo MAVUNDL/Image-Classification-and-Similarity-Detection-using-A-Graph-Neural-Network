@@ -147,3 +147,9 @@ During the testing phase, the model evaluates new, unseen images without updatin
 - **True Negative (TN):** 8  
 - **False Positive (FP):** 2  
 - **False Negative (FN):** 4
+
+### System Requirements
+- This project requires the latest ``Java JDK 21``  and above
+- Run the .jar file by double clicking it or using the command ``java -jar "Computer Visions.jar" ``
+- Alternatively add the project to your IDE that supports Java.
+- If the jar file does not run on double click, install ``jarfix`` from `` http://johann.loefflmann.net/en/software/jarfix/index.html ``
