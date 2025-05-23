@@ -35,7 +35,7 @@ public class GNNModel extends Layer {
         double score = averageScore(predictedScores);
         Queue<Pair<Double, String>> results = new QueueDS<>();
         // get results
-        if(score >= 0.58){
+        if(score >= 0.52){
             results.enqueue(new Pair<>(score, "good image"));
         } else {
            results.enqueue(new Pair<>(score, "Bad Image"));

@@ -15,6 +15,7 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -32,10 +33,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Queue<Image> imageQueue = queueImages(loadImagesFromSubfolders("/app/resources", "testing", "testing.txt"));
-        Image image = imageQueue.front();
+        Image image = imageQueue.dequeue();
         KNNGraph graph = new KNNGraph(image,15);
         GNNModel model = new GNNModel(8, 8);
-        model.trainModel(loadImagesFromSubfolders("/app/resources", "training", "data.txt"), 0.001, 4);
+        model.trainModel(loadImagesFromSubfolders("/app/resources", "training", "data.txt"), 0.001, 1);
         Queue<Pair<Double, String>> results = model.test(graph.getKnnGraph());
 
         GraphView<Patch, Double> graphView = new GraphView<>(graph.getKnnGraph());
@@ -71,7 +72,24 @@ public class Main extends Application {
             }
         });
 
+        window.uploader().setOnAction(actionEvent -> {
+            FileChooser file = new FileChooser();
+            Image currentImage = null;
+            try {
+                currentImage = new Image(new FileInputStream(file.showOpenDialog(stage)));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            KNNGraph newGraph = new KNNGraph(currentImage, 10);
+            Queue<Pair<Double, String>> newResults = model.test(newGraph.getKnnGraph());
+            counter.getAndIncrement();
+            Image finalCurrentImage = currentImage;
+            Platform.runLater(() -> {
+                window.updateImage(finalCurrentImage, newResults);
+                graphView.update(newGraph.getKnnGraph());
+            });
 
+        });
         stage.setScene(scene);
         stage.setMinHeight(660);
         stage.setMinWidth(1300);

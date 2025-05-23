@@ -22,6 +22,7 @@ import javafx.util.Duration;
  */
 public class Window extends GridPane {
     private Button slider;
+    private Button upload;
     private Image image;
     private ImageView imageView;
     private Pane pane;
@@ -36,6 +37,7 @@ public class Window extends GridPane {
         this.pane = frame;
         this.image = image;
         this.slider = new Button("Next Image");
+        this.upload = new Button("Upload an Image");
         this.imageView = new ImageView(this.image);
         this.imageView.setFitWidth(600);
         this.imageView.setFitHeight(400);
@@ -53,7 +55,7 @@ public class Window extends GridPane {
         LabelUI graphLabel = new LabelNode("KNN Graph For Image");
 
         VBox layerImage = new VBox();
-        layerImage.getChildren().addAll((Node) imageLabel, imageView, this.slider);
+        layerImage.getChildren().addAll((Node) imageLabel, imageView, this.slider, this.upload);
         layerImage.setPadding(new Insets(10,10,10,10));
         layerImage.setSpacing(10);
 
@@ -61,8 +63,6 @@ public class Window extends GridPane {
         layerGraph.getChildren().addAll((Node) graphLabel, graphView);
         layerGraph.setPadding(new Insets(10,10,10,10));
         layerGraph.setSpacing(10);
-
-        //Pair<Double, String> prediction = results.dequeue();
 
         HBox layerScore = new HBox();
         LabelUI ScoreLabel = new LabelNode("Score: ");
@@ -119,6 +119,13 @@ public class Window extends GridPane {
      */
     public Button imageSlider(){
         return this.slider;
+    }
+
+    /**
+     * @return returns a reference to the button to upload an images in the GUI
+     */
+    public Button uploader(){
+        return this.upload;
     }
 
     /**

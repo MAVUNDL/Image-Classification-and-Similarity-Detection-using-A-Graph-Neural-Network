@@ -2,3 +2,4 @@ artifacts/ filter=lfs diff=lfs merge=lfs -text
 *.jar filter=lfs diff=lfs merge=lfs -text
 *.modules filter=lfs diff=lfs merge=lfs -text
 artifacts/Computer_Vision_jar/Computer[[:space:]]Vision.jar filter=lfs diff=lfs merge=lfs -text
+artifacts/Computer_Vision_jar/Computer[[:space:]]Vision.jar filter=lfs diff=lfs merge=lfs -text
