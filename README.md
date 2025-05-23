@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/382058a2-492a-4b62-a36e-ba54849f179f)
+![WhatsApp Image 2025-05-21 at 16 08 57_c0a5067c](https://github.com/user-attachments/assets/0c38bae0-fec8-4423-8728-69b9cc31c1c6)
+
 
 ## Background
 
