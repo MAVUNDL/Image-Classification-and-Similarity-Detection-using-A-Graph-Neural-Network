@@ -101,9 +101,9 @@ During the testing phase, the model evaluates new, unseen images without updatin
     
 - A classification decision is made based on the average score:
     
-    - If the average score is **greater than or equal to 0.58**, the image is classified as a **"Good Image"**.
+    - If the average score is **greater than or equal to 0.52**, the image is classified as a **"Good Image"**.
         
-    - If the average score is **less than 0.58**, the image is classified as a **"Bad Image"**.
+    - If the average score is **less than 0.52**, the image is classified as a **"Bad Image"**.
         
 - Importantly, **no further weight updates occur during testing**; the model uses the parameters optimized during training to make predictions.
 
@@ -112,17 +112,17 @@ During the testing phase, the model evaluates new, unseen images without updatin
 
 | Prediction Type       | Good Images (10 total) | Bad Images (10 total) |
 |:-----------------------|:-----------------------|:----------------------|
-| Correctly Predicted     | 6                      | 8                     |
-| Incorrectly Predicted   | 4                      | 2                     |
+| Correctly Predicted     | 9                      | 10                     |
+| Incorrectly Predicted   | 1                      | 0                     |
 
 
 - **Accuracy for good images:**
 
-  Accuracy = 6 / 10 = 60%
+  Accuracy = 9 / 10 = 90%
 
 - **Accuracy for bad images:**
 
-  Accuracy = 8 / 10 = 80%
+  Accuracy = 10 / 10 = 100%
 
 - **Overall samples:**
 
@@ -130,21 +130,8 @@ During the testing phase, the model evaluates new, unseen images without updatin
 
 - **Overall correct predictions:**
 
-  6 + 8 = 14
+  9 + 10 = 19
 
 - **Overall accuracy:**
 
-  Accuracy = 14 / 20 = 70%
-
-
-### Confusion Matrix
-
-|                        | Predicted Good | Predicted Bad |
-|:-----------------------|:--------------:|:-------------:|
-| **Actual Good**         | 6 (True Positive) | 4 (False Negative) |
-| **Actual Bad**          | 2 (False Positive) | 8 (True Negative) |
-
-- **True Positive (TP):** 6  
-- **True Negative (TN):** 8  
-- **False Positive (FP):** 2  
-- **False Negative (FN):** 4
+  Accuracy = 19 / 20 = 95%
